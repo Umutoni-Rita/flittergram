@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 
 class UserPost extends StatelessWidget {
-  const UserPost({super.key});
+  final String name;
+  const UserPost({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -24,8 +26,8 @@ class UserPost extends StatelessWidget {
                     decoration: BoxDecoration(
                         shape: BoxShape.circle, color: Colors.grey[400]),
                   ),
-                  const Text(
-                    "k3lly__",
+                  Text(
+                    name,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -90,13 +92,14 @@ class UserPost extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(left: 12, top: 8),
           child: RichText(
-            textAlign: TextAlign.left,
+            textAlign: TextAlign.start,
             text: TextSpan(
               children: [
                 TextSpan(
-                    text: "k3lly__",
-                    style: TextStyle(fontWeight: FontWeight.bold)),
-                TextSpan(text: "Was told to post these")
+                    text: name, style: TextStyle(fontWeight: FontWeight.bold)),
+                TextSpan(
+                    text:
+                        "She was 19 with a baby on the way on the east side of the city she was working everyday")
               ],
             ),
           ),

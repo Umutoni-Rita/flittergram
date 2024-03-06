@@ -65,7 +65,14 @@ class UserHome extends StatelessWidget {
           ),
           //POSTS
 
-          UserPost()
+          Expanded(
+            child: ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: people.length,
+                itemBuilder: (context, index) {
+                  return UserPost(name: people[index]);
+                }),
+          )
         ],
       ),
     );
